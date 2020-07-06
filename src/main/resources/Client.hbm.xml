@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Class.Client" table="client" schema="appleservice">
+        <id name="firstname" column="firstname"/>
+        <property name="lastname" column="lastname"/>
+        <property name="phoneNumber" column="phone_number"/>
+        <many-to-one name="modelByModelId" class="Class.Device" cascade="all">
+            <column name="model_id" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
